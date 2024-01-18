@@ -1,0 +1,138 @@
+@charset "UTF-8";
+header {
+  width: 100%; /* Ancho del contenedor */
+  height: -moz-fit-content;
+  height: fit-content; /* Altura del contenedor, Se expande hasta su tamaño máximo, pero se ajusta automáticamente al contenido si este es menor. */
+  background-size: cover; /* Ajustar el tamaño para cubrir el contenedor */
+  background-repeat: no-repeat; /* Evitar la repetición */
+  background-color: rgb(255, 230, 0);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "pokemon";
+  color: rgba(255, 191, 0, 0.982);
+}
+
+body {
+  min-width: 405px;
+}
+
+.imagen-pokemon {
+  height: 209px;
+  width: 155px;
+  list-style: none;
+  padding: 12px;
+  background-image: url();
+  text-align: center;
+  background-repeat: round;
+  border: 4px rgba(111, 174, 2, 0.84) solid;
+  border-radius: 3%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.imagen-titulo {
+  width: 100%;
+  background-image: url();
+}
+
+@font-face {
+  font-family: "pokemon";
+  src: url(../recursos/fuentes/nunito/Nunito-Italic-VariableFont_wght.ttf), url(../recursos/fuentes/nunito/Nunito-VariableFont_wght.ttf);
+  font-weight: 300;
+}
+.nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.nav .icon {
+  display: none;
+}
+
+/* Código para ocultar enlaces y mostrar el icono */
+@media screen and (max-width: 600px) {
+  .nav a:not(:first-child) {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+/* Código para hacer la navegación responsive */
+@media screen and (max-width: 600px) {
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/* Estilos base de la tarjeta */
+.tarjeta {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  perspective: 1000px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+/* Nueva regla para manejar la rotación en la tarjeta volteada */
+.tarjeta.volteada {
+  transform: rotateY(180deg);
+}
+
+.cara-detras {
+  position: absolute;
+  width: 188px;
+  height: 242px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: hsla(245, 61%, 58%, 0.491);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cara-detras p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */

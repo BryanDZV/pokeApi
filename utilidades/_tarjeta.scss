@@ -1,0 +1,39 @@
+/* Estilos base de la tarjeta */
+.tarjeta {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    perspective: 1000px;
+    cursor: pointer;// para cambiar la apariencia del cursor cuando pasa sobre un elemento interactivo,
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  /* Nueva regla para manejar la rotación en la tarjeta volteada */
+  .tarjeta.volteada {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .cara-detras {
+    position: absolute;
+    width: 188px;
+    height: 242px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: hsla(245, 61%, 58%, 0.491);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+  
+  .cara-detras p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    
+  }
